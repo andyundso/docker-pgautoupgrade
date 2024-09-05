@@ -3,5 +3,13 @@
   "extends": [
     "config:recommended",
     "customManagers:dockerfileVersions"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "wikidata/postgresql"
+      ],
+      "major": false
+    }
   ]
 }
