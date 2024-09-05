@@ -10,16 +10,16 @@ ENV PG10=10.23
 ENV PG11=11.22
 
 # renovate: datasource=repology depName=almalinux_8/postgresql versioning=loose
-ENV PG12_VERSION=12.20
+ENV PG12_VERSION=16.4-1.module_el8.10.0+3884+a79fbae6
 
 # renovate: datasource=repology depName=almalinux_8/postgresql versioning=loose
-ENV PG13_VERSION=13.16
+ENV PG13_VERSION=16.4-1.module_el8.10.0+3884+a79fbae6
 
 # renovate: datasource=repology depName=almalinux_8/postgresql versioning=loose
-ENV PG14_VERSION=14.13
+ENV PG14_VERSION=16.4-1.module_el8.10.0+3884+a79fbae6
 
 # renovate: datasource=repology depName=almalinux_8/postgresql versioning=loose
-ENV PG15_VERSION=15.8
+ENV PG15_VERSION=16.4-1.module_el8.10.0+3884+a79fbae6
 
 # renovate: datasource=repology depName=almalinux_8/postgresql versioning=loose
 ENV PG16_VERSION=16.4
