@@ -10,19 +10,19 @@ ENV PG10=10.23
 ENV PG11=11.22
 
 # renovate: datasource=repology depName=macports/postgresql12-server versioning=loose
-ENV PG12_VERSION=12.20
+ENV PG12_VERSION=12.19
 
 # renovate: datasource=repology depName=macports/postgresql13-server versioning=loose
-ENV PG13_VERSION=13.16
+ENV PG13_VERSION=13.15
 
 # renovate: datasource=repology depName=macports/postgresql14-server versioning=loose
-ENV PG14_VERSION=14.13
+ENV PG14_VERSION=14.12
 
 # renovate: datasource=repology depName=macports/postgresql15-server versioning=loose
-ENV PG15_VERSION=15.8
+ENV PG15_VERSION=15.7
 
 # renovate: datasource=repology depName=macports/postgresql16-server versioning=loose
-ENV PG16_VERSION=16.4
+ENV PG16_VERSION=16.3
 
 # Where we'll do all our compiling and similar
 ENV BUILD_ROOT /buildroot
