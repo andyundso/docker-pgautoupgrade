@@ -7,7 +7,7 @@ on:
     - cron: "0 0 * * 0"
 
 env:
-  # renovate: datasource=docker depName=alpine versioning=semver-coerced
+  # renovate: datasource=docker depName=alpine versioning=docker
   ALPINE_VERSION: "3.20"
 
 jobs:

@@ -1,6 +1,6 @@
 ARG PGTARGET=16
 
-# renovate: datasource=docker depName=alpine versioning=semver-coerced
+# renovate: datasource=docker depName=alpine versioning=docker
 ARG ALPINE_VERSION=3.20
 
 ### Things we need in all build containers
@@ -12,19 +12,19 @@ ENV PG96=9.6.24
 ENV PG10=10.23
 ENV PG11=11.22
 
-# renovate: datasource=repology depName=homebrew/postgresql@12 versioning=semver-coerced
+# renovate: datasource=repology depName=homebrew/postgresql@12 versioning=docker
 ENV PG12_VERSION=12.19
 
-# renovate: datasource=repology depName=homebrew/postgresql@13 versioning=semver-coerced
+# renovate: datasource=repology depName=homebrew/postgresql@13 versioning=docker
 ENV PG13_VERSION=13.15
 
-# renovate: datasource=repology depName=homebrew/postgresql@14 versioning=semver-coerced
+# renovate: datasource=repology depName=homebrew/postgresql@14 versioning=docker
 ENV PG14_VERSION=14.12
 
-# renovate: datasource=repology depName=homebrew/postgresql@15 versioning=semver-coerced
+# renovate: datasource=repology depName=homebrew/postgresql@15 versioning=docker
 ENV PG15_VERSION=15.7
 
-# renovate: datasource=repology depName=homebrew/postgresql@16 versioning=semver-coerced
+# renovate: datasource=repology depName=homebrew/postgresql@16 versioning=docker
 ENV PG16_VERSION=16.3
 
 # Where we'll do all our compiling and similar
