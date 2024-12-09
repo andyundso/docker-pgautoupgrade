@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+env:
+  # renovate: datasource=docker depName=alpine versioning=loose
+  ALPINE_VERSION: "3.20"
+
 jobs:
   base-images:
     # for security reason, we only build these images in our repository and on the main branch
@@ -78,7 +82,7 @@ jobs:
       matrix:
         operating_system:
           - flavor: "alpine"
-            version: "3.20"
+            version: "${{ env.ALPINE_VERSION }}"
           - flavor: "bookworm"
         pg_target:
           - "12"
