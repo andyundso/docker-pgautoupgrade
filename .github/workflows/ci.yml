@@ -6,10 +6,6 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
-vars:
-  # renovate: datasource=docker depName=alpine versioning=docker
-  ALPINE_VERSION: "3.20"
-
 jobs:
   base-images:
     # for security reason, we only build these images in our repository and on the main branch
@@ -76,13 +72,14 @@ jobs:
         type=registry,ref=pgautoupgrade/pgautoupgrade:build-15-${{ matrix.operating_system.flavor }}
         type=registry,ref=pgautoupgrade/pgautoupgrade:build-16-${{ matrix.operating_system.flavor }}
         type=registry,ref=pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}
-        type=registry,ref=pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.version }}
+        type=registry,ref=pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.OS_VERSION }}
 
     strategy:
       matrix:
         operating_system:
           - flavor: "alpine"
-            version: "${{ vars.ALPINE_VERSION }}"
+            # renovate: datasource=docker depName=alpine versioning=docker
+            OS_VERSION: "3.20"
           - flavor: "bookworm"
         pg_target:
           - "12"
@@ -112,7 +109,7 @@ jobs:
           load: true
           tags: |
             "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}"
-            "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.version }}"
+            "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.OS_VERSION }}"
           build-args: |
             "PGTARGET=${{ matrix.pg_target }}"
           cache-to: type=inline
@@ -145,7 +142,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}"
-            "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.version }}"
+            "pgautoupgrade/pgautoupgrade:${{ matrix.pg_target }}-${{ matrix.operating_system.flavor }}${{ matrix.operating_system.OS_VERSION }}"
           build-args: |
             "PGTARGET=${{ matrix.pg_target }}"
           push: true
