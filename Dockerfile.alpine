@@ -13,7 +13,7 @@ ENV PG10=10.23
 ENV PG11=11.22
 
 # renovate: datasource=repology depName=homebrew/postgresql@12 versioning=docker
-ENV PG12_VERSION=12.19
+ENV PG12_VERSION=12.22
 
 # renovate: datasource=repology depName=homebrew/postgresql@13 versioning=docker
 ENV PG13_VERSION=13.15
